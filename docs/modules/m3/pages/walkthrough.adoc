@@ -1,0 +1,20 @@
+
+## LAB WALKTHROUGH
+.Module Overview
+|===
+| https://link.to.module1.in.line[Enabling Immediate Productivity] |https://link.to.module2.in.line[Automating Guardrails] |https://link.to.module3.in.line[Building a Flexible Architecture]
+|===
+
+### Module Three: Building a Flexible Architecture
+#### Lessons Learned:
+How to develop applications using microservices and event driven architectures, all on one platform, which is easily deployable and consistently integrated across any cloud.
+
+#### Instructions:
+
+**API**
+
+**FAULT TOLERANCE**
+
+**STREAMING WITH KAFKA**
+
+**EVENT-DRIVEN ARCHITECTURE**

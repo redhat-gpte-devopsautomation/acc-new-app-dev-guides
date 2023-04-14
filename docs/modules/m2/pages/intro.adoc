@@ -1,0 +1,21 @@
+# ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
+# Red Hat Summit 2023
+
+## ABOUT THIS LAB
+In this lab we'll address some ways that can help you with some major challenges we've witnessed with some of our largest customers:
+
+* In order to meet your customer's needs, you need the ability to deliver new capabilities through secure software applications rapidly, and continuously.
+* Many customers have applications that are architected and developed in such a way that they are not easily evolvable, agile enough to meet a rapid change in business reuirements, or even in a position to efficiently develop and maintain new applications, especially without reaching the same challenges again.
+* IT organizations need to facilitate securely buildable and deployable applications at scale for their developers, wherever it makes sense for the business - whether on-premesis, in a cloud, or even in a hybrid combination. 
+## LAB ASSETS
+https://supporting.slides.link[Supporting Slides]
+
+## INTRODUCTION
+I think we can all agree that fast, secure, and continuous deployment of great software is the backbone to this generations most successful organizations. Without a great digital experience that is constantly improving, a company risks being quickly outpaced by competitors and ultimately, obsolescence.
+
+Modern application development is an approach that enables your development team(s) to quickly respond to business needs and improve reaction to changes by rapidly updating applications and services. They are designed and packaged as microservices that are loosely coupled for easier maintenance with higher fault tolerances. Combining this with the power of a cloud-native environment, you can speed up your build and release cycles, with less operational overhead. 
+
+People often hesitate out of intimidation of difficult technology adoptions. This demo shows the new way of application development that can change the way an organization works, increasing each technical team's agility, relieving them from the life of repeatedly putting out fires.
+
+The lab presents a journey through the new cloud native application development, from code to production, from writing code and operating workload, to system design.
+

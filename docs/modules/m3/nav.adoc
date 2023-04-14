@@ -1,0 +1,4 @@
+.Building a Flexible Architecture
+* xref:intro.adoc[Introduction]
+* xref:walkthrough.adoc[Walkthrough]
+* xref:finish.adoc[Finish]

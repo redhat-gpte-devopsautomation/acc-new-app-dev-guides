@@ -1,0 +1,13 @@
+# ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
+# Red Hat Summit 2023
+
+## Congratulations on completing this module!
+*Please return to your user assignment or click here for https://link.to.module2.in.line[Module 2 - Automating Guardrails].*
+
+*Don't forget to review the listed training courses available through Red Hat Training and Certification.*
+
+*Additionally, below you’ll find a few Red Hat Portfolio Architectures that can be useful for understanding how some of our customers are using similar technologies/concepts to what we've reviewed today. These are customer deployed solutions that Red Hat has brought in-house, boiled down into an easily understandable, consumable, and shareable format to influence innovation for our customers and partners. These solutions are available at https://redhat.com/architect/portfolio[The Red Hat Portfolio Architecture Center].*
+
+* https://www.redhat.com/architect/portfolio/detail/4[**Cloud Native Development**] : Cloud-native development is an approach to building and running applications to fully exploit the advantages of cloud computing.
+* https://www.redhat.com/architect/portfolio/detail/8[**Hybrid Multi Cloud Management with GitOps**] : Unify continuous delivery as well as secured secret management across both hybrid and multi cloud environments.
+* https://www.redhat.com/architect/portfolio/detail/27[**Event Driven Automation**] : Automating event response for configuration changes, security preparedness, or emergency incident handling across a scaling estate, whether on-premises in physical data centers or in public/private clouds.

@@ -1,0 +1,19 @@
+# Accelerate New Application Development
+
+## Local development
+
+[source,bash]
+----
+podman -t localhost/acc-new-app-dev-guides .
+podman run --rm -t -p 4000:8080 localhost/acc-new-app-dev-guides
+----
+
+## Deploy to OpenShift
+
+[source,bash]
+----
+oc new-app https://github.com/redhat-gpte-devopsautomation/acc-new-app-dev-guides.git --strategy=docker
+ oc create route edge acc-new-app-dev-guides --service=acc-new-app-dev-guides
+# To rebuild after changes pushed to git
+oc start-build acc-new-app-dev-guides --follow
+----

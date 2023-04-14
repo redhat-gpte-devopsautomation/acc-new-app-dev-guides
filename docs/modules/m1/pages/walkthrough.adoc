@@ -1,0 +1,20 @@
+# ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
+# Red Hat Summit 2023
+
+## LAB WALKTHROUGH
+
+
+### Module One: Enabling Immediate Productivity
+#### Lessons Learned:
+How developers can achieve immediate productivity with built-in capabilities using the languages they are already familiar with, and predefined development pathways that meet your team's needs.
+
+#### Instructions:
+
+**DEV EXPERIENCE & POLYGLOT**
+
+**LIVE CODING**
+
+**CONTAINER-HELP**
+
+**SELF-PROVISIONING**
+
