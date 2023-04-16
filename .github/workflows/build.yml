@@ -33,7 +33,7 @@ jobs:
         id: build-image
         uses: redhat-actions/buildah-build@v2
         with:
-          image: redhat-gpte-devopsautomation/acc-new-app-dev-guides
+          image: acc-new-app-dev-guides
           tags: latest ${{ github.sha }}
           dockerfiles: |
             ./Dockerfile
@@ -45,7 +45,7 @@ jobs:
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
-          registry: ghcr.io
+          registry: ghcr.io/redhat-gpte-devopsautomation
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: push image to quay.io
@@ -53,6 +53,6 @@ jobs:
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
-          registry: quay.io
+          registry: quay.io/juliaaano
           username: ${{ secrets.REGISTRY_QUAY_IO_USER }}
           password: ${{ secrets.REGISTRY_QUAY_IO_PASSWORD }}
