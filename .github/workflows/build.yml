@@ -34,7 +34,7 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: acc-new-app-dev-guides
-          tags: latest ${{ github.sha }}
+          tags: latest ${GITHUB_REF##*/}
           dockerfiles: |
             ./Dockerfile
           build-args: |
