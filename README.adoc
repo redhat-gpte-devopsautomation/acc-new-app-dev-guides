@@ -4,7 +4,7 @@
 
 [source,bash]
 ----
-podman -t localhost/acc-new-app-dev-guides .
+podman build -t localhost/acc-new-app-dev-guides .
 podman run --rm -p 4000:8080 localhost/acc-new-app-dev-guides
 ----
 

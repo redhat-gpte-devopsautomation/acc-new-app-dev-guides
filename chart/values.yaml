@@ -4,7 +4,7 @@
 
 namespace: guides
 
-image: quay.io/redhat-gpte-devopsautomation/acc-new-app-dev-guides:latest
+image: ghcr.io/redhat-gpte-devopsautomation/acc-new-app-dev-guides:latest
 
 replicaCount: 1
 

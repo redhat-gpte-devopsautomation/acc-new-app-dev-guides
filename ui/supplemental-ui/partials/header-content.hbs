@@ -4,7 +4,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const userId = urlParams.get('USERID');
       const subDomain = urlParams.get('SUBDOMAIN');
-      const tomcatIP = urlParams.get('TOMCATIP');
+      const apiUrl = urlParams.get('APIURL');
       if (userId) {
         showUserId( userId );
       }
@@ -19,7 +19,7 @@
       document.getElementById('navbar-form-filled').style.display = "flex";
       document.getElementById('username').textContent = userId;
       document.getElementById('subDomain').value = subDomain;
-      document.getElementById('tomcatIP').value = tomcatIP;
+      document.getElementById('apiUrl').value = apiUrl;
 
     }
 
@@ -31,9 +31,9 @@
     function goWithUserId() {
       elUserIdInput = document.getElementById('userId');
       elSubDomainInput = document.getElementById('subDomain');
-      elTomcatIPInput = document.getElementById('tomcatIP');
+      elapiUrlInput = document.getElementById('apiUrl');
 
-      window.location.search = ('&USERID=' + elUserIdInput.value + '&SUBDOMAIN=' + elSubDomainInput.value + '&TOMCATIP=' + elTomcatIPInput.value);
+      window.location.search = ('&USERID=' + elUserIdInput.value + '&SUBDOMAIN=' + elSubDomainInput.value + '&APIURL=' + elapiUrlInput.value);
     }
 
   </script>
@@ -62,7 +62,7 @@
             </div>
             <input size="40" id="userId" type="text" placeholder="Enter USER ID">
             <input type="hidden" id="subDomain" name="subDomain" value="">
-            <input type="hidden" id="tomcatIP" name="tomcatIP" value="">
+            <input type="hidden" id="apiUrl" name="apiUrl" value="">
           </form>
         </div>
 
