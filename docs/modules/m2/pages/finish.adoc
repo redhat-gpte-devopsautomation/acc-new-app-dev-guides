@@ -5,9 +5,32 @@
 ## Congratulations on completing this module!
 *Please return to your user assignment or click here for https://link.to.module3.in.line[Module Three: Building a Flexible Architecture].*
 
-*Don't forget to review the listed training courses available through Red Hat Training and Certification.*
+## Red Hat Training and Certification offers additional training on Red Hat OpenShift for individuals of all experience levels. 
+These paths cover topics including deploying containers, developing containerized applications, managing container storage, and using automated DevOps pipeline.
 
-*Additionally, below you’ll find a few Red Hat Portfolio Architectures that can be useful for understanding how some of our customers are using similar technologies/concepts to what we've reviewed today. These are customer deployed solutions that Red Hat has brought in-house, boiled down into an easily understandable, consumable, and shareable format to influence innovation for our customers and partners. These solutions are available at https://redhat.com/architect/portfolio[The Red Hat Portfolio Architecture Center].*
+*Red Hat OpenShift training courses and certifications for all experience types: Administration*
+|===
+|Course ID |Course Title
+|DO180 |Red Hat OpenShift I: Containers & Kubernetes
+|DO280 |Red Hat OpenShift Administration II: Operating a Production Kubernetes Cluster
+|DO380 |Red Hat OpenShift Administration III: Scaling Kubernetes Deployments in the Enterprise
+|DO480 |Multicluster Management with Red Hat OpenShift Platform Plus
+|===
+
+
+*Red Hat OpenShift training courses and certifications for all experience types: Application Development*
+
+|===
+|DO188 |Red Hat OpenShift Development I: Introduction to Containers with Podman
+|DO288 |Red Hat OpenShift Developer II: Building Kubernetes Applications
+|DO244 |Developing Applications with Red Hat OpenShift Serverless and Knative
+|DO378 |Red Hat Cloud-native Microservices Development with Quarkus
+|AD482 |Developing Event-Driven Applications with Apache Kafka and Red Hat AMQ Streams
+|===
+
+
+## Red Hat Portfolio Architecture Center
+Red Hat Portfolio Architectures are useful in understanding how some of our most innovative customers are using similar technologies/concepts to what we've reviewed today. These are customer deployed solutions that Red Hat has brought in-house, boiled down into an easily understandable, consumable, and shareable format to influence innovation for our customers and partners. These solutions are available at https://redhat.com/architect/portfolio[The Red Hat Portfolio Architecture Center].*
 
 * https://www.redhat.com/architect/portfolio/detail/4[**Cloud Native Development**] : Cloud-native development is an approach to building and running applications to fully exploit the advantages of cloud computing.
 * https://www.redhat.com/architect/portfolio/detail/8[**Hybrid Multi Cloud Management with GitOps**] : Unify continuous delivery as well as secured secret management across both hybrid and multi cloud environments.
