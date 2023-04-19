@@ -2,9 +2,6 @@
 # Red Hat Summit 2023
 
 
-## Congratulations on completing this module!
-*Please return to your user assignment or click here for https://link.to.module3.in.line[Module Three: Building a Flexible Architecture].*
-
 ## Red Hat Training and Certification offers additional training on Red Hat OpenShift for individuals of all experience levels. 
 These paths cover topics including deploying containers, developing containerized applications, managing container storage, and using automated DevOps pipeline.
 
@@ -30,7 +27,7 @@ These paths cover topics including deploying containers, developing containerize
 
 
 ## Red Hat Portfolio Architecture Center
-Red Hat Portfolio Architectures are useful in understanding how some of our most innovative customers are using similar technologies/concepts to what we've reviewed today. These are customer deployed solutions that Red Hat has brought in-house, boiled down into an easily understandable, consumable, and shareable format to influence innovation for our customers and partners. These solutions are available at https://redhat.com/architect/portfolio[The Red Hat Portfolio Architecture Center].*
+Red Hat Portfolio Architectures are useful in understanding how some of our most innovative customers are using similar technologies/concepts to what we've reviewed today. These are customer deployed solutions that Red Hat has brought in-house, boiled down into an easily understandable, consumable, and shareable format to influence innovation for our customers and partners. These solutions are available at https://redhat.com/architect/portfolio[*The Red Hat Portfolio Architecture Center*].
 
 * https://www.redhat.com/architect/portfolio/detail/4[**Cloud Native Development**] : Cloud-native development is an approach to building and running applications to fully exploit the advantages of cloud computing.
 * https://www.redhat.com/architect/portfolio/detail/8[**Hybrid Multi Cloud Management with GitOps**] : Unify continuous delivery as well as secured secret management across both hybrid and multi cloud environments.
