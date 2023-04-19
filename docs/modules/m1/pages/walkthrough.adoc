@@ -1,3 +1,5 @@
+:imagesdir: https://github.com/redhat-gpte-devopsautomation/acc-new-app-dev-guides/blob/main/docs/modules/m1/assets/images/
+
 # ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
 # Red Hat Summit 2023
 
@@ -8,13 +10,116 @@
 #### Lessons Learned:
 How developers can achieve immediate productivity with built-in capabilities using the languages they are already familiar with, and predefined development pathways that meet your team's needs.
 
-#### Instructions:
+== Instructions:
 
-**DEV EXPERIENCE & POLYGLOT**
+== **DEV EXPERIENCE & POLYGLOT**
 
-**LIVE CODING**
+The foundation of all successful modern applications is a stable cloud-native development platform. Our OpenShift Container Platform enables your developers to swiftly deliver an application wherever they need it. Inside of the console, a developer and operations admin each have their own console view to improve their focus and gain quicker access to the features they might need within that platform.
+As discussed, being flexible in what programming language to use allows the developer to use the right tech for their specific job, while providing unified packaging and management. 
 
-**CONTAINER-HELP**
+.*Run the application for the first time:*
+. Navigate to the Application UI
+.. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
+.. Ensure you select Developer from the dropdown.
+... Note: For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
 
-**SELF-PROVISIONING**
+image::1-1-3-DeveloperPerspective.png[Dev,,]
+
+[start=3]
+.. Select Topology in the left hand menu and choose quarkus-superheroes-...
+
+image::1-1-1-QuarkusTopology.png[Topology,,]
+
+[start=4]
+.. Locate and hover over the NodeJS icon, to reveal the OpenURL link - click OpenURL to open the application.
+
+image::1-1-1-AppUI-URL.png[AppUI,,]
+
+[start=5]
+. Run your first Fight
+.. Two opponents are pre-loaded upon loading the application, but you can select New Fighters if you’d like.. 
+.. Click the Fight button. 
+
+image::1-1-1-FirstFight.png[FirstFight,,]
+
+[start=3]
+. Take note of the following components involved in this activity:
+.. A User Interface to display the application.
+.. The Backend services, one that loads from Broker A (Hero), one that loads from Agent B (Villain) and one that runs a comparison between the two (Fight).
+.. The Utility services, which are the microservices that keep track of the winner counts, etc.
+
+.*Return to the Topology view.*
+. Take some time to review the graphical representation of everything involved in this application.
+. Recognize the components we outlined in the presentation of this lab, and what we just encountered in our first attempt at running the application.
+
+image::1-1-4-Topology.png[AppUI,,]
+
+Developers can also examine the developer perspective, where they gain access to metrics, builds, pipeline, configurations, and most importantly the topology of the application. With this graphical representation, developers can quickly interpret all the available services, how they are connected, review their status and even access details about each available component.
+
+Take a closer look at this topology. Specifically, you will find that all three backend services were written in Java, and our UI is based on NodeJS. OpenShift allows your developers to choose what the right language and the right framework is for the job at hand. Whether because of the available libraries, the nature of the framework, or simply because the developer has more experience with it, being able to use their preferred language is key to enabling them to deploy new applications with speed. This polyglot approach gives that choice and freedom back to the developers, while simultaneously unifying the way to manage them.
+
+== **LIVE CODING**
+
+Improve and expedite the inner loop development process with live coding where code changes are automatically reflected in your running application. In essence:
+
+ CODE → REFRESH BROWSER → REPEAT
+
+.*Let’s run a quick example of how live coding makes the development process faster and more pleasant.*
+
+. To begin, navigate to your code server*
+.. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
+... Ensure you select Developer from the dropdown.
+... Select Topology in the left hand menu and choose codeserver-...
+.... Note: If already looking at the Topology of quarkus-superheroes, you can select the codeserver project from your Projects dropdown menu.
+... Hover over the codeserver to locate the OpenURL link - Click OpenURL to open your codeserver in a new browser tab.
+
+image::1-2-1-Codeserver.png[CodeServer,,]
+
+[start=2]
+. Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present either on the top left menu or at the top of the window.*
+
+image::1-2-2-Terminal.png[Terminal,,]
+
+[start=3]
+. Navigate to /home/lab-user/quarkus-super-heroes/rest-villains by typing in:
+
+ ]$ cd rest-villains
+ 
+. Run:
+
+ ]$ ./mvnw quarkus:dev 
+ 
+image::1-2-3-Quarkus-Dev.png[QDev,,]
+
+[start=5]
+. Once this completes, hover over http://localhost:8084 in the INFO: output stating “Listening on…” and click “Follow Link”
+
+image::1-2-4-Quarkus-Dev.png[QDevOut,,]
+
+[start=6]
+. Append /api/villains/hello to the end of the link
+.. Note: Take note of the response “Hello Villain Resource”
+
+image::1-2-5-Browser-Preview.png[BrowserPreview,,]
+
+[start=7]
+. In your workspace on the left hand side of the window, open the rest-villains folder, and branch down through the following sequence
+ rest-villains/src/main/java/io/quarkus/sample/superheroes/villain/rest/VillainResource.java
+
+image::1-2-7-VillainResource.png[VillainResource,,]
+
+[start=8]
+. Down in line 253, replace the implementation of the hello() endpoint to:
+ return "Hello Summit 2023!";
+
+image::1-2-8-HelloSummit.png[HelloWorld,,]
+
+[start=9]
+. Flip back to the browser and refresh the page to see your result changes.
+
+That’s it! We just experienced the ability to build or change an application with no need to compile. This enables developers to swiftly deliver an application wherever they need it.
+
+== **CONTAINER-HELP**
+
+== **SELF-PROVISIONING**
 
