@@ -12,7 +12,7 @@ How developers can achieve immediate productivity with built-in capabilities usi
 
 == Instructions:
 
-== **DEV EXPERIENCE & POLYGLOT**
+== **DEVELOPER EXPERIENCE & POLYGLOT**
 
 The foundation of all successful modern applications is a stable cloud-native development platform. Our OpenShift Container Platform enables your developers to swiftly deliver an application wherever they need it. Inside of the console, a developer and operations admin each have their own console view to improve their focus and gain quicker access to the features they might need within that platform.
 As discussed, being flexible in what programming language to use allows the developer to use the right tech for their specific job, while providing unified packaging and management. 
@@ -66,7 +66,7 @@ Improve and expedite the inner loop development process with live coding where c
 
 .*Let’s run a quick example of how live coding makes the development process faster and more pleasant.*
 
-. To begin, navigate to your code server*
+. To begin, navigate to your code server
 .. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
 ... Ensure you select Developer from the dropdown.
 ... Select Topology in the left hand menu and choose codeserver-...
@@ -119,7 +119,85 @@ image::1-2-8-HelloSummit.png[HelloWorld,,]
 
 That’s it! We just experienced the ability to build or change an application with no need to compile. This enables developers to swiftly deliver an application wherever they need it.
 
-== **CONTAINER-HELP**
+== **CONTAINER HELP**
+
+Quarkus does all of the heavy-lifting and integration for developers when developing and testing their applications. For example, Quarkus supports the automatic provisioning of unconfigured services, removing the provisioning and configuration hassle.
+
+. Create a new project:
+.. In the OpenShift Console, click your user in the top right corner, and select Copy Login Command. (This will use your same credentials as earlier)
+
+image::1-3-1-CopyLogin.png[CopyLogin,,]
+
+[start=2, indent=1]
+.. Click Display Token hyperlink, and copy the oc login command under “Log in with this token”
+
+image::1-3-1-CopyLoginToken.png[CopyToken,,]
+
+[start=3]
+.. Open a New Terminal in your codeserver, and paste the oc login command you just copied. 
+.. Type the following to create your new project:
+
+ ]$ oc new-project dev-<youruserid> 
+
+[start=2]
+. Navigate to /home/codeserver/quarkus-super-heroes/rest-fights:
+
+ ]$ cd /home/codeserver/quarkus-super-heroes/rest-fights/
+
+. Run:
+
+ ]$ ./mvnw clean package -DskipTests \
+  -Dquarkus.kubernetes.deploy=true \
+  -Dquarkus.kubernetes.deployment-target=openshift \
+  -Dquarkus.container-image.builder=openshift \
+  -Dquarkus.openshift.resources.limits.memory=2Gi \
+  -Dquarkus.openshift.resources.requests.memory=256Mi \
+  -Dquarkus.kubernetes-client.trust-certs=true
+
+Note: This will take a few minutes while it deploys a fresh kafka instance back to the namespace, even though the Strimzi instance is still there. The rest-fights app will now be configured to use the new single-pod instance.
+
+image::1-3-4-KafkaDeploy.png[KafkaDeploy,,]
+
+[start=4]
+. Flip back to the Topology in your OpenShift Console, switch to your new Development Project and note all of the resources deployed in this new project.
+
+image::1-3-5-DevTopology.png[DevTopology,,]
+ 
+Developers can focus on code without having to touch containers, leaving all the packaging to quarkus plugins, as it can redeploy applications directly to the development env on cloud.
+
 
 == **SELF-PROVISIONING**
+Finally, we have the ability to self-provision services. This allows greater efficiency by enabling your developers to focus on the code rather than the logistics. Developers are now able to take full control over their infrastructure and application configuration, while being shielded from the underlying complexities of the cloud providers and services. As an example, if I need another database, I can simply provision another database using a template or operator. There is even a UI guiding you through the process, and the provisioning and configuration can be exported as code that can be reused later for DevOps.
+
+. Go to the OpenShift Console and make sure you're still in the Developer perspective.
+. In the newly added development project (dev-<youruserid>), Click +Add on the left menu
+.. Select Database in the Developer Catalog
+
+image::1-4-2a-AddDatabase.png[AddDB,,]
+
+[start=2]
+.. Choose PostgreSQL(Ephemeral) Template
+.. Click the Instantiate Template button at the top
+
+image::1-4-2bc-PostgreSWL(Ephemeral).png[PostgreSQL,,]
+
+[start=4]
+.. Enter a Username + Password of your choice in the Instantiate Template page. Everything else default is fine for this demo.
+.. Click Create
+
+image::1-4-2de-Create.png[Create,,]
+
+[start=2]
+. Back in the Topology identify your new database 
+.. Select the DB, click the DC postgresql hyperlink by hovering over the label in the top right, and navigate to the YAML tab
+
+image::1-4-3a-DCPostgreSQL.png[DCPostgreSQL,,]
+
+[start=2]
+.. Here you can see and/or make changes to the deployment config yaml file for this newly provisioned database
+
+image::1-4-3b-YAML.png[yaml,,]
+
+That’s it! You’ve just self-provisioned your new database.
+
 
