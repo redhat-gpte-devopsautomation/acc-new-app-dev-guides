@@ -7,8 +7,6 @@ In this lab we'll address some ways that can help you with some major challenges
 * In order to meet your customer's needs, you need the ability to deliver new capabilities through secure software applications rapidly, and continuously.
 * Many customers have applications that are architected and developed in such a way that they are not easily evolvable, agile enough to meet a rapid change in business reuirements, or even in a position to efficiently develop and maintain new applications, especially without reaching the same challenges again.
 * IT organizations need to facilitate securely buildable and deployable applications at scale for their developers, wherever it makes sense for the business - whether on-premesis, in a cloud, or even in a hybrid combination. 
-## LAB ASSETS
-https://supporting.slides.link[Supporting Slides]
 
 ## INTRODUCTION
 I think we can all agree that fast, secure, and continuous deployment of great software is the backbone to this generations most successful organizations. Without a great digital experience that is constantly improving, a company risks being quickly outpaced by competitors and ultimately, obsolescence.
