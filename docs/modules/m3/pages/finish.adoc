@@ -5,7 +5,7 @@
 ## Congratulations on completing this lab! 
 We hope this helped establish a foundational understanding that you can take home and build upon evolving your journey in application development.*
 
-## Red Hat® Training and Certification offers additional training on Red Hat OpenShift® for individuals of all experience levels. 
+## Red Hat Training and Certification offers additional training on Red Hat OpenShift for individuals of all experience levels. 
 These paths cover topics including deploying containers, developing containerized applications, managing container storage, and using automated DevOps pipeline.
 
 *Red Hat OpenShift training courses and certifications for all experience types: Administration*
@@ -29,7 +29,8 @@ These paths cover topics including deploying containers, developing containerize
 |===
 
 
-*Additionally, below you’ll find a few Red Hat Portfolio Architectures that can be useful for understanding how some of our customers are using similar technologies/concepts to what we've reviewed today. These are customer deployed solutions that Red Hat has brought in-house, boiled down into an easily understandable, consumable, and shareable format to influence innovation for our customers and partners. These solutions are available at https://redhat.com/architect/portfolio[The Red Hat Portfolio Architecture Center].*
+## Red Hat Portfolio Architecture Center
+Red Hat Portfolio Architectures are useful in understanding how some of our most innovative customers are using similar technologies/concepts to what we've reviewed today. These are customer deployed solutions that Red Hat has brought in-house, boiled down into an easily understandable, consumable, and shareable format to influence innovation for our customers and partners. These solutions are available at https://redhat.com/architect/portfolio[*The Red Hat Portfolio Architecture Center*].
 
 * https://www.redhat.com/architect/portfolio/detail/4[**Cloud Native Development**] : Cloud-native development is an approach to building and running applications to fully exploit the advantages of cloud computing.
 * https://www.redhat.com/architect/portfolio/detail/8[**Hybrid Multi Cloud Management with GitOps**] : Unify continuous delivery as well as secured secret management across both hybrid and multi cloud environments.
