@@ -24,7 +24,7 @@ OpenShift Pipelines is Kubernetes-native, meaning all of its building blocks are
 
  rest-fights/src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
 
-Note: The FightResource is a different location from the VillainResource that we were in for the previous module. 
+> **Note:** The FightResource is a different location from the VillainResource that we were in for the previous module. 
 
 [start=2]
 . Make some changes to the code, ie. change the output of the hello endpoint to your name.
@@ -46,7 +46,7 @@ Note: The FightResource is a different location from the VillainResource that we
  ]$ git add src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
  ]$ git commit -m "Code change to service"
 
-Note: If encountering “error: pathspec ‘change’...” or similar, try typing the git commit command explicitly as copy/paste might be changing the quote character to something unrecognizable, causing this error.
+> **Note:** If encountering “error: pathspec ‘change’...” or similar, try typing the git commit command explicitly as copy/paste might be changing the quote character to something unrecognizable, causing this error.
 
  ]$ git push
  
@@ -57,7 +57,8 @@ Note: If encountering “error: pathspec ‘change’...” or similar, try typi
 
 [start=7]
 . Wait until the process completes and confirm the successful status.
-Note: it can take a while for the pipeline run to finish and ArgoCD to deploy the new app version.
+
+> **Note:** it can take a while for the pipeline run to finish and ArgoCD to deploy the new app version.
 
 [start=8]
 . Verify your changes have been deployed by calling the hello endpoint:
@@ -67,7 +68,7 @@ Note: it can take a while for the pipeline run to finish and ArgoCD to deploy th
 
  /q/swagger-ui/#/hello/get_api_fights_hello
 
-Note: if unable to access the application immediately upon pipeline completion, this may take an additional minute - try refreshing the page after another minute or two.
+> **Note:** if unable to access the application immediately upon pipeline completion, this may take an additional minute - try refreshing the page after another minute or two.
 
 [start=4]
 .. Trigger the hello response
@@ -89,7 +90,7 @@ The benefit of running everything in the single platform is that you can now reu
 
 == **MONITORING**
 
-Note: This section is shortened since admin rights are restricted in this lab instance. When you get to review this on your own, you’ll have access to more dashboards featuring much more in-depth monitoring details.
+> **Note:** This section is shortened since admin rights are restricted in this lab instance. When you get to review this on your own, you’ll have access to more dashboards featuring much more in-depth monitoring details.
 
 . In the OpenShift console and select the Project quarkus-superheroes-<youruserid>
 . Review the Dashboard data
@@ -106,7 +107,9 @@ As we start to manage more complex environments that may span across multiple cl
 . Go to GitOps console [ArgoCD], review all of the monitored resources, and map it back to the Topology in the OpenShift console:
 .. Navigate to the Project argocd-<youruserid> and flip to the Topology view. Select the OpenURL link in the top right-hand corner of the argocd-server icon.
 .. If the ArgoCD login screen comes up, click the Log In Via OpenShift button at the top, and use the same UserID and password that you logged into OpenShift earlier.
-Note: You may need to authorize read-only access to your user information. Click Allow Permissions if so.
+
+> **Note:** You may need to authorize read-only access to your user information. Click Allow Permissions if so.
+
 [start=3]
 .. Click into the quarkus-superheroes application and you will see all of the resources also mapped out in the OpenShift console.
 
