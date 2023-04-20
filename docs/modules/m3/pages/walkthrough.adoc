@@ -1,4 +1,4 @@
-:imagesdir: https://github.com/redhat-gpte-devopsautomation/acc-new-app-dev-guides/blob/main/docs/modules/m1/assets/images/
+:imagesdir: https://github.com/redhat-gpte-devopsautomation/acc-new-app-dev-guides/blob/main/docs/modules/m3/assets/images/
 
 # ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
 # Red Hat Summit 2023
@@ -24,16 +24,22 @@ Red Hat accelerates the delivery of these two most widely adopted types of archi
 .*Here, we will demonstrate the use of both API as well as implementing Event Driven Architecture using Apache Kafka*
 . In the quarkus-superheroes-... project, select one of the rest-{“hero”, “villain”, “fight”} applications in the OpenShift Topology perspective and select the Resourcestab.
 
+image::3-1-1-ResourceURL.png[ResourceURL,,]
+
 [start=2]
 . Copy the location under Routes and append /q/swagger-ui to the URL in your browser.
 
 > **Note**: If you receive an error of “Application is not available” in this step, it’s likely you’re using https which is default protocol for most browsers. We want to keep http here so keep the link as is when copied, and simply append /q/swagger-ui to the end of it. 
 
+image::3-1-2-AppendSwagger.png[AppendSwagger,,]
+
 [start=3]
 . Under {“heroes”, “villains”, “fights”}, expand one of the GET operations
-
-[start=4]
 . Click on [Try It Out] and then on [Execute] and review the response back
+
+image::3-1-4-TryItOut.png[Try,,]
+
+image::3-1-5-ExecuteResponse.png[Execute,,]
 
 As a system grows, the API becomes another resource to manage as we have access control and security - all needing to be managed at greater scale, in order to provide consumers access to the service(s) you offer. (The same applies to endpoints in the event-driven world.)
 
@@ -44,23 +50,27 @@ All of the services in this demo, from the service handling a Fight, to the Vill
 In a distributed environment, fault tolerance happens around the clock for the maintainer, as they must allow it to partially run without bringing down the entire system. Otherwise, the system may result in cascading failures, where the failure of one service eventually brings down all of the services. This mechanism is built-in with Quarkus, and the developer can define how it should be handled. Examples include timeouts, fallbacks, retries, and circuit breakers.
 
 . Back in Topology, find the rest-villains icon and click on it.
-
-[start=2]
 . The deployment sidebar will appear on the right-hand side of the topology view. Click the Details tab.
-
-[start=3]
 . Click the v[down] arrow, next to the pod count chart, to scale the service down to 0 pods. This will simulate the service being unavailable.
+
+image::3-2-3-ScaleDown.png[ScaleDown,,]
 
 [start=4]
 . Return to the Super Heroes UI and refresh the page, or click New Fighters.
 
 > **Note**: There is about a 2 second delay and then the Super Heroes UI displays the Fallback villain
 
+image::3-2-4-Fallback.png[Fallback,,]
+
 [start=5]
 . You can now reverse the procedure to scale the service back up.
 
+image::3-2-5a-ScaleUp.png[ScaleUp,,]
+
 [start=6]
 . Once it updates from “Scaling to 1 pod” to “1 pod”, return to the Super Heroes UI and refreshing the page should allow villains to appear again
+
+image::3-2-5b-Fight.png[Fight,,]
 
 As you can see, the rest-fights service is resilient in the face of failures.
 
@@ -75,14 +85,18 @@ Event-driven architectures need a robust asynchronous communication backbone. Re
 [start=2]
 . Select [Operators] on the left menu, and select [Installed Operators].
 
+image::3-3-3-Kafka.png[Kafka,,]
+
 [start=3]
 . Select Red Hat Integration - AMQ Streams.
-
-[start=4]
 . In the Kafka Topic tab, select Show operands in: Current namespace only.
+
+image::3-3-5-KafkaTopic.png[Topic,,]
 
 [start=5]
 . Review some of the Kafka Topics by selecting them, and view installation details by clicking on their respective YAML tabs.
+
+image::3-3-1-InstallDetails.png[Install,,]
 
 
 == **EVENT-DRIVEN ARCHITECTURE**
@@ -92,22 +106,32 @@ Similar to API, EDA also needs to manage, secure, and provide access information
 
 > **Note**: A Fight schema is  automatically created after performing at least one fight. (If you’ve not yet, there won’t be any schemas in the registry)
 
+image::3-4-1-Apicurio.png[Apicurio,,]
+
 [start=2]
 . Select Fight (fights-value) to see more details and display general information about the schema.
+
+image::3-4-2-API-Fight.png[APIFight,,]
 
 [start=3]
 . Select Content to display the content of the schema.
 
+image::3-4-3-API-Content.png[APIContent,,]
+
 [start=4]
 . Select from the Version dropdown in the top right corner of the screen to display a particular version of the schema.
 
+image::3-4-4-API-Version.png[APIVersion,,]
+
 [start=5]
 . You can delete/upload new versions of the schema here and back on the info edit some of its metadata.
-
-[start=6]
 . Select the edit icon next to Version Metadata to edit some of the metadata of the schema (Name/labels/description/etc).
+
+image::3-4-6-API-Metadata.png[APIMeta,,]
 
 [start=7]
 . As well, you can click [Download] to download the schema, [Enable] next to Validity rule to enable validation on the schema, or [Enable] next to Compatibility rule to enable compatibility rules when updating the schema.
+
+image::3-4-7-API-DLEnable.png[APIDownload,,]
 
 Regardless of these two, the platform itself also has a complete set of supported services and applications. Check out the OperatorHub for the marketplace of all available partners in Red Hat’s OpenShift ecosystems.
