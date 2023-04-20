@@ -21,31 +21,32 @@ As discussed, being flexible in what programming language to use allows the deve
 . Navigate to the Application UI
 .. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
 .. Ensure you select Developer from the dropdown.
-... Note: For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
+
+> **Note:** For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
 
 image::1-1-3-DeveloperPerspective.png[Dev,,]
 
 [start=3]
-.. Select Topology in the left hand menu and choose quarkus-superheroes-...
+.. Select #Topology# in the left hand menu and choose quarkus-superheroes-...
 
 image::1-1-1-QuarkusTopology.png[Topology,,]
 
 [start=4]
-.. Locate and hover over the NodeJS icon, to reveal the OpenURL link - click OpenURL to open the application.
+.. Locate and hover over the NodeJS icon, to reveal the #OpenURL# link - click #OpenURL# to open the application.
 
 image::1-1-1-AppUI-URL.png[AppUI,,]
 
-[start=5]
+[start=2]
 . Run your first Fight
-.. Two opponents are pre-loaded upon loading the application, but you can select New Fighters if you’d like.. 
-.. Click the Fight button. 
+.. Two opponents are pre-loaded upon loading the application, but you can select #New Fighters# if you’d like.. 
+.. Click the #Fight# button. 
 
 image::1-1-1-FirstFight.png[FirstFight,,]
 
 [start=3]
 . Take note of the following components involved in this activity:
 .. A User Interface to display the application.
-.. The Backend services, one that loads from Broker A (Hero), one that loads from Agent B (Villain) and one that runs a comparison between the two (Fight).
+.. The Backend services, one that loads from #Broker A (Hero)#, one that loads from #Agent B (Villain)# and one that runs a comparison between the two #(Fight)#.
 .. The Utility services, which are the microservices that keep track of the winner counts, etc.
 
 .*Return to the Topology view.*
@@ -70,7 +71,10 @@ Improve and expedite the inner loop development process with live coding where c
 .. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
 ... Ensure you select Developer from the dropdown.
 ... Select Topology in the left hand menu and choose codeserver-...
-.... Note: If already looking at the Topology of quarkus-superheroes, you can select the codeserver project from your Projects dropdown menu.
+
+> **Note:** If already looking at the Topology of quarkus-superheroes, you can select the codeserver project from your Projects dropdown menu.
+
+[start=3]
 ... Hover over the codeserver to locate the OpenURL link - Click OpenURL to open your codeserver in a new browser tab.
 
 image::1-2-1-Codeserver.png[CodeServer,,]
@@ -98,7 +102,7 @@ image::1-2-4-Quarkus-Dev.png[QDevOut,,]
 
 [start=6]
 . Append /api/villains/hello to the end of the link
-.. Note: Take note of the response “Hello Villain Resource”
+> **Note:** Take note of the response “Hello Villain Resource”
 
 image::1-2-5-Browser-Preview.png[BrowserPreview,,]
 
@@ -154,7 +158,7 @@ image::1-3-1-CopyLoginToken.png[CopyToken,,]
   -Dquarkus.openshift.resources.requests.memory=256Mi \
   -Dquarkus.kubernetes-client.trust-certs=true
 
-Note: This will take a few minutes while it deploys a fresh kafka instance back to the namespace, even though the Strimzi instance is still there. The rest-fights app will now be configured to use the new single-pod instance.
+> **Note:** This will take a few minutes while it deploys a fresh kafka instance back to the namespace, even though the Strimzi instance is still there. The rest-fights app will now be configured to use the new single-pod instance.
 
 image::1-3-4-KafkaDeploy.png[KafkaDeploy,,]
 
