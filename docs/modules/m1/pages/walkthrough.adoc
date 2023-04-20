@@ -80,7 +80,7 @@ Improve and expedite the inner loop development process with live coding where c
 image::1-2-1-Codeserver.png[CodeServer,,]
 
 [start=2]
-. Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present either on the top left menu or at the top of the window.*
+. Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present either on the top left menu or at the top of the window.
 
 image::1-2-2-Terminal.png[Terminal,,]
 
@@ -96,7 +96,7 @@ image::1-2-2-Terminal.png[Terminal,,]
 image::1-2-3-Quarkus-Dev.png[QDev,,]
 
 [start=5]
-. Once this completes, hover over http://localhost:8084 in the INFO: output stating “Listening on…” and click “Follow Link”
+. Once this completes, hover over http://localhost:8084 in the [INFO] output stating “Listening on…” and click “Follow Link”
 
 image::1-2-4-Quarkus-Dev.png[QDevOut,,]
 
