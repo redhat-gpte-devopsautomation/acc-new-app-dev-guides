@@ -27,7 +27,7 @@ Red Hat accelerates the delivery of these two most widely adopted types of archi
 [start=2]
 . Copy the location under Routes and append /q/swagger-ui to the URL in your browser.
 
-> **Note:** If you receive an error of “Application is not available” in this step, it’s likely you’re using https which is default protocol for most browsers. We want to keep http here so keep the link as is when copied, and simply append /q/swagger-ui to the end of it. 
+> **Note**: If you receive an error of “Application is not available” in this step, it’s likely you’re using https which is default protocol for most browsers. We want to keep http here so keep the link as is when copied, and simply append /q/swagger-ui to the end of it. 
 
 [start=3]
 . Under {“heroes”, “villains”, “fights”}, expand one of the GET operations
@@ -54,7 +54,7 @@ In a distributed environment, fault tolerance happens around the clock for the m
 [start=4]
 . Return to the Super Heroes UI and refresh the page, or click New Fighters.
 
-> **Note:** There is about a 2 second delay and then the Super Heroes UI displays the Fallback villain
+> **Note**: There is about a 2 second delay and then the Super Heroes UI displays the Fallback villain
 
 [start=5]
 . You can now reverse the procedure to scale the service back up.
@@ -70,7 +70,7 @@ Event-driven architectures need a robust asynchronous communication backbone. Re
 
 . Flip over to the Administrator Perspective in the top left hand corner of the OpenShift console.
 
-> **Note:** Admin rights are restricted in this lab instance, so you’ll only be able to review what’s in the current namespace, but when you go to review this on your own in the sales play demo, you’ll have access to administrator..
+> **Note**: Admin rights are restricted in this lab instance, so you’ll only be able to review what’s in the current namespace, but when you go to review this on your own in the sales play demo, you’ll have access to administrator..
 
 [start=2]
 . Select [Operators] on the left menu, and select [Installed Operators].
@@ -90,7 +90,7 @@ Similar to API, EDA also needs to manage, secure, and provide access information
 
 . Back In the developer perspective, navigate to the  Topology view for the Project quarkus-superheroes-<youruserid>, click on the Apicurio icon, and follow the URL/Route
 
-> **Note:** A Fight schema is  automatically created after performing at least one fight. (If you’ve not yet, there won’t be any schemas in the registry)
+> **Note**: A Fight schema is  automatically created after performing at least one fight. (If you’ve not yet, there won’t be any schemas in the registry)
 
 [start=2]
 . Select Fight (fights-value) to see more details and display general information about the schema.
