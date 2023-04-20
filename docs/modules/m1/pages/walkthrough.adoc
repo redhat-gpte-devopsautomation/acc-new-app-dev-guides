@@ -3,7 +3,7 @@
 # ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
 # Red Hat Summit 2023
 
-## LAB WALKTHROUGH
+== LAB WALKTHROUGH
 
 
 ### Module One: Enabling Immediate Productivity
@@ -22,7 +22,7 @@ As discussed, being flexible in what programming language to use allows the deve
 .. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
 .. Ensure you select Developer from the dropdown.
 
-> **Note:** For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
+> **Note**: For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
 
 image::1-1-3-DeveloperPerspective.png[Dev,,]
 
@@ -72,7 +72,7 @@ Improve and expedite the inner loop development process with live coding where c
 ... Ensure you select Developer from the dropdown.
 ... Select Topology in the left hand menu and choose codeserver-...
 
-> **Note:** If already looking at the Topology of quarkus-superheroes, you can select the codeserver project from your Projects dropdown menu.
+> **Note**: If already looking at the Topology of quarkus-superheroes, you can select the codeserver project from your Projects dropdown menu.
 
 [start=3]
 ... Hover over the codeserver to locate the OpenURL link - Click OpenURL to open your codeserver in a new browser tab.
@@ -102,7 +102,8 @@ image::1-2-4-Quarkus-Dev.png[QDevOut,,]
 
 [start=6]
 . Append /api/villains/hello to the end of the link
-> **Note:** Take note of the response “Hello Villain Resource”
+
+> **Note**: Take note of the response “Hello Villain Resource”
 
 image::1-2-5-Browser-Preview.png[BrowserPreview,,]
 
@@ -158,7 +159,7 @@ image::1-3-1-CopyLoginToken.png[CopyToken,,]
   -Dquarkus.openshift.resources.requests.memory=256Mi \
   -Dquarkus.kubernetes-client.trust-certs=true
 
-> **Note:** This will take a few minutes while it deploys a fresh kafka instance back to the namespace, even though the Strimzi instance is still there. The rest-fights app will now be configured to use the new single-pod instance.
+> **Note**: This will take a few minutes while it deploys a fresh kafka instance back to the namespace, even though the Strimzi instance is still there. The rest-fights app will now be configured to use the new single-pod instance.
 
 image::1-3-4-KafkaDeploy.png[KafkaDeploy,,]
 
