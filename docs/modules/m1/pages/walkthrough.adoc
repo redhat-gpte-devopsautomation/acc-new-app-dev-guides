@@ -1,13 +1,13 @@
 :imagesdir: https://github.com/redhat-gpte-devopsautomation/acc-new-app-dev-guides/blob/main/docs/modules/m1/assets/images/
 
-# ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
-# Red Hat Summit 2023
+= ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
+= Red Hat Summit 2023
 
 == LAB WALKTHROUGH
 
 
-### Module One: Enabling Immediate Productivity
-#### Lessons Learned:
+=== Module One: Enabling Immediate Productivity
+==== Lessons Learned:
 How developers can achieve immediate productivity with built-in capabilities using the languages they are already familiar with, and predefined development pathways that meet your team's needs.
 
 == Instructions:
@@ -20,7 +20,7 @@ As discussed, being flexible in what programming language to use allows the deve
 .*Run the application for the first time:*
 . Navigate to the Application UI
 .. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
-.. Ensure you select Developer from the dropdown.
+.. Ensure you select #Developer# from the dropdown.
 
 > **Note**: For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
 
