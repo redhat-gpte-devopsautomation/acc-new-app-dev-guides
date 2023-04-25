@@ -1,20 +1,195 @@
+:imagesdir: https://github.com/redhat-gpte-devopsautomation/acc-new-app-dev-guides/blob/main/docs/modules/m2/assets/images/
+
+# ACCELERATE APPLICATION DEVELOPMENT LAB GUIDE
+# Red Hat Summit 2023
+
 ## LAB WALKTHROUGH
-.Module Overview
-|===
-| https://link.to.module1.in.line[Enabling Immediate Productivity] |https://link.to.module2.in.line[Automating Guardrails] |https://link.to.module3.in.line[Building a Flexible Architecture]
-|===
 
-### Module Two: Automating Guardrails for Consistent Security and Operational Control
+### Module Two: Automating Guardrails for Consistent Security and Operation Control 
+
 #### Lessons Learned:
-How to ease the operation and management of clusters distributed across a hybrid cloud environment, while maintaining security, consistency, and operational control.
+How to ease the operation and management of clusters distributed across a hybrid cloud environment, while maintaining security, consistency, and operational control
 
-#### Instructions:
+== Instructions:
 
-**STANDARDIZED CI/CD**
+== **STANDARDIZED CI/CD**
+Allowing greater developer freedom does not mean loosening security or ignoring disciplines of operational processes. On the contrary, in modern application development, providing built-in guardrails that are seamlessly embedded within the tools and platforms being used, can limit friction between teams and remove a number of barriers that inhibit their effective collaboration.
 
-**MONITORING**
+Today, modern environments are more complex than ever. Applications are being deployed across multiple clusters, regions, and clouds. To address the need to release often, with quicker-than-ever times to market, a standardized continuous integration and continuous delivery (CI/CD) process is crucial, where developers can quickly build, test, and get it shipped. Once released we can configure, package, and orchestrate the deployment in a software-defined, highly automated and secure  manner.
 
-**CONFIGURATION DRIFT**
+OpenShift Pipelines is Kubernetes-native, meaning all of its building blocks are targeted to manage, build, deploy, and configure resources on the platform. It even includes catalogs of reusable components for building out the pipeline. This allows the DevOps team to standardize on the automation of a CI/CD lifecycle. Furthermore, the developer team can focus on delivering code to the repository and once the automation kicks off, it takes care of the rest!
+
+
+. To begin, go to the Code Server and open the rest-fights folder. (If you don’t still have the Code Server open from before, please see Module 1, Live Coding for navigation instructions)
+
+ rest-fights/src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
+
+> **Note**: The FightResource is a different location from the VillainResource that we were in for the previous module. 
+
+image::2-1-1-FightResource.png[FightResource,,]
+
+[start=2]
+. Make some changes to the code, ie. change the output of the hello endpoint to your name.
+.. Scroll down to the public String hello() method at line 122
+.. Replace "Hello Fight Resource" with "Hello <yourname>”
+
+image::2-1-2-ChangeOutput.png[HelloUser,,]
+
+[start=3]
+. If you don’t already have one active, open a new terminal by going to [Terminal] → [New Terminal] on the top menu bar.
+. Return to the quarkus-superheroes-<youruserid> project, and make sure you’re in the  rest-fights directory
+
+ ]$ oc project quarkus-superheroes-<youruserid>
+ ]$ cd /home/codeserver/quarkus-super-heroes/rest-fights
+
+[start=5]
+. Push the change into Git.
+
+ ]$ git add src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
+ ]$ git commit -m "Code change to service"
+ ]$ git push
+
+> **Note**: If encountering “error: pathspec ‘change’...” or similar, try typing the git commit command explicitly as copy/paste might be changing the quote character to something unrecognizable, causing this error.
+
+image::2-1-4-GitPush.png[GitPush,,]
+
+[start=6]
+. This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project tekton-<youruserid>. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
+
+image::2-1-6a-TektonPipelines.png[Pipeline,,]
+
+.. You can review the status in PipelineRuns tab, and watch the build logs progress under the Logs tab.
+.. As this progresses, on the Details tab, you’ll be able to watch the pipeline stage through the build.
+
+image::2-1-6-PipelineRunsLog.png[PipelineRuns]
+
+[start=7]
+. Wait until the process completes and confirm the successful status.
+
+> **Note**: it can take a few minutes for the pipeline run to finish and another minute or two for ArgoCD to deploy the new app version.
+
+[start=8]
+. Verify your changes have been deployed by calling the hello endpoint:
+.. In the OpenShift Console, switch back to the Topology of the quarkus-superheroes project, and select the rest-fights service. 
+.. Under the Details tab, select Copy to Clipboard for the link in the Routes section.
+
+image::2-1-8a1-Verify-CopyLink.png[CopyLink,,]
+
+[start=3]
+.. Paste the URL in your browser, appending the following to the end of the URL. 
+
+ /q/swagger-ui/#/hello/get_api_fights_hello
+
+> **Note**: if unable to access the application immediately upon pipeline completion, this may take an additional minute - try refreshing the page after another minute or two.
+
+image::2-1-8a2-Verify-AppendSwagger.png[AppendSwagger,,]
+
+[start=4]
+.. Trigger the hello response
+... Click Try it out in the top right corner
+
+image::2-1-8a3-Verify-TryItOut.png[TryItOut,,]
+
+[start=2]
+... Click Execute
+... See your update in the Response body
+
+image::2-1-8a4-Verify-Response.png[Response,,]
+
+[start=5]
+.. An alternative is to trigger this respons in your terminal with curl:
+
+ ]$ curl <insert_copied_link_from_8b>/api/fights/hello
+
+
+Here we ran through an example of a pipeline. You can note that once the developer checks-in the code, the pipeline kicks off and starts the building process, and you can then view the progress of the pipeline.
+
+To put it simply, we made the pipeline do three things - build, test, and deploy.
+
+The pipeline clones the source code from the git repo. It then builds the application with the standard set of libraries and runtime versions before packaging and pushing a secured container image into the registry. Finally, it updates the GitOps repository monitored by the ArgoCD instance in charge of the deployment.
+
+The benefit of running everything in the single platform is that you can now reuse resources such as configurations, secrets (for credentials), etc., all centrally managed on the same platform.
+
+== **MONITORING**
+
+> **Note**: This section is shortened since admin rights are restricted in this lab instance. When you get to review this on your own, you’ll have access to more dashboards featuring much more in-depth monitoring details.
+
+. In the OpenShift console and select the Project quarkus-superheroes-<youruserid>
+. Take some time to review the details available to you in the Dashboard data
+.. Select  [Observe] → [Dashboard]
+
+image::2-2-2-Monitoring.png[Dashboard,,]
+
+In an organization, there may be multiple types of applications catering to different needs. For example, managing libraries, patching, and configuration can be highly complex, often becoming a nightmare, even for skilled operators.
+
+By containerizing these workloads, they become consistent and portable. Having this platform helps the DevOps team(s) orchestrate a large number of containers together while setting up the Ops team for ultimate agility with resources like load-balancing, scaling, networking policies and storage, all while the machines and nodes are set up in a declarative way. 
+
+== **CONFIGURATION DRIFT**
+As we start to manage more complex environments that may span across multiple cloud providers, it becomes increasingly important that we learn how to manage these systems consistently. One of the most important tasks is keeping these systems configurations from slowly (or rapidly) drifting apart.
+
+
+. Go to GitOps console [ArgoCD], review all of the monitored resources, and map it back to the Topology in the OpenShift console:
+.. Navigate to the Project argocd-<youruserid> and flip to the Topology view. Select the OpenURL link in the top right-hand corner of the argocd-server icon.
+
+image::2-3-1a-ArgoCDServer.png[ArgoCD,,]
+
+[start=2]
+.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier.
+
+> **Note**: You may need to authorize read-only access to your user information. Click Allow Permissions if so.
+
+image::2-3-1b-LoginViaOpenShift.png[ArgoCDLogin,,]
+
+[start=3]
+.. Click into the quarkus-superheroes application and you will see all of the resources also mapped out in the OpenShift console.
+
+image::2-3-1c-Resources.png[ArgoCDResources,,]
+
+[start=2]
+. Go to Gitea and review the deployment configs:
+.. In your User Assignment tool, click the link at the bottom to take you to Gitea
+.. Once on the Gitea homepage, click Sign In on the top right.
+.. Credentials are the same as you’ve been using.
+.. Click the link to the repository  <youruserid>/quarkus-super-heroes-deploy
+
+image::2-3-2d-GiteaRepo.png[GiteaRepo,,]
+
+[start=5]
+.. Select the kustomize directory.
+
+image::2-3-2e-GiteaKustomize.png[Kustomize,,]
+
+start=6
+.. Here you have the ability to dig into the deployment code for each service like where we’ve been working in rest-villains or  rest-fights.
+
+image::2-3-2f-GiteaDeployment.png[GiteaDeployment,,]
+
+[start=3]
+. Back In the OpenShift Console, under Developer perspective, go to the Topology, within the Project quarkus-superheroes-<youruserid>.
+. Locate the rest-fights service.
+. Click the icon and the right panel will appear - select the Details tab.
+. Increase the number of running Pod to 3 by clicking ^ next to the pod count chart
+
+image::2-3-6-IncreasePods.png[IncreasePodCount,,]
+
+[start=7]
+. Return to GitOps console [ArgoCD], see the status now becomes out of sync
+
+image::2-3-7-OutOfSync.png[OutOfSync,,]
+
+[start=8]
+. Click on sync at the top of the next window that appears, and click Synchronize at the top. 
+
+image::2-3-8a-Synchronize.png[Sync,,]
+
+[start=9]
+. Return to the Topology. Notice the pod scales back to 1, as set in the git repo.
+
+> **Note**: An alternative is you can choose to commit the replica to 2-3 and see the pod increase.
+
+image::2-3-8a-Synched.png[Synched,,]
+
+Ultimately, with the introduction of GitOps you can avoid configuration drift, and it’s easier than ever to move between clouds & clusters. ArgoCD will ensure that any manual changes made on the cluster can be manually or automatically reverted to some known state, forcing a proper GitOps approach.
 
 
 
