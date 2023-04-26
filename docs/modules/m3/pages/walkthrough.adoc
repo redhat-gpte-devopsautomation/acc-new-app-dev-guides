@@ -58,6 +58,8 @@ image::3-2-3-ScaleDown.png[ScaleDown,,]
 [start=4]
 . Return to the Super Heroes UI and refresh the page, or click New Fighters.
 
+> **Note**: Please see the first section of Module 1 if you closed the UI and need help finding it again.
+
 > **Note**: There is about a 2 second delay and then the Super Heroes UI displays the Fallback villain
 
 image::3-2-4-Fallback.png[Fallback,,]
@@ -88,7 +90,7 @@ Event-driven architectures need a robust asynchronous communication backbone. Re
 image::3-3-3-Kafka.png[Kafka,,]
 
 [start=3]
-. Select Red Hat Integration - AMQ Streams.
+. Select AMQ Streams.
 . In the Kafka Topic tab, select Show operands in: Current namespace only.
 
 image::3-3-5-KafkaTopic.png[Topic,,]
