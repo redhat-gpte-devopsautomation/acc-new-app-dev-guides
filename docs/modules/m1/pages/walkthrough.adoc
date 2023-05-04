@@ -82,7 +82,10 @@ image::1-2-1-Codeserver.png[CodeServer,,]
 [start=2]
 . Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present either on the top left menu or at the top of the window.
 
+> **Note**: If you don't have a taskbar at the top of your codeserver, you can still access a new terminal by using the [ctrl + `] shortcut, or you can try accessing your codeserver from a different browser as there may be incompatibility with the browser you're currently using.
+
 image::1-2-2-Terminal.png[Terminal,,]
+
 
 [start=3]
 . Navigate to /home/lab-user/quarkus-super-heroes/rest-villains by typing in:
