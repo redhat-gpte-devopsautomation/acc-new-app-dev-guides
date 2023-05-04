@@ -15,7 +15,7 @@ How developers can achieve immediate productivity with built-in capabilities usi
 == **DEVELOPER EXPERIENCE & POLYGLOT**
 
 The foundation of all successful modern applications is a stable cloud-native development platform. Our OpenShift Container Platform enables your developers to swiftly deliver an application wherever they need it. Inside of the console, a developer and operations admin each have their own console view to improve their focus and gain quicker access to the features they might need within that platform.
-As discussed, being flexible in what programming language to use allows the developer to use the right tech for their specific job, while providing unified packaging and management. 
+Being flexible in what programming language to use allows the developer to use the right tech for their specific job, while providing unified packaging and management. 
 
 .*Run the application for the first time:*
 . Navigate to the Application UI
