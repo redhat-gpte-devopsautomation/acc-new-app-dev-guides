@@ -159,7 +159,7 @@ image::2-3-2d-GiteaRepo.png[GiteaRepo,,]
 
 image::2-3-2e-GiteaKustomize.png[Kustomize,,]
 
-start=6
+[start=6]
 .. Here you have the ability to dig into the deployment code for each service like where we’ve been working in rest-villains or  rest-fights.
 
 image::2-3-2f-GiteaDeployment.png[GiteaDeployment,,]
