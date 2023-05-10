@@ -2,7 +2,7 @@
 # Red Hat Summit 2023
 
 ## Congratulations on completing this module!
-*Please return to your user assignment or click here for https://link.to.module2.in.line[Module 2 - Automating Guardrails].*
+*Please return to your user assignment or click here for xref:m2:intro.adoc[Module 2 - Automating Guardrails].*
 
 ## Red Hat Training and Certification offers additional training on Red Hat OpenShift for individuals of all experience levels. 
 These paths cover topics including deploying containers, developing containerized applications, managing container storage, and using automated DevOps pipeline.
