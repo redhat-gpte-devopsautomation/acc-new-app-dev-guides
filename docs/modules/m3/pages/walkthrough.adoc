@@ -22,7 +22,7 @@ Since modern application development has shifted to distributed, decoupled, and 
 Red Hat accelerates the delivery of these two most widely adopted types of architecture by providing solutions the system needs. First the base platform, shifting from large monolithic applications to microservices means removing the complexity of managing day two operation, application delivery, and resource orchestration. In the previous sections, we got to witness how Red Hat can automate in a cloud native way and have code from the application in just a few minutes. Furthermore, we’re even able to deliver them in the form of containers to easily distribute and manage.
 
 .*Here, we will demonstrate the use of both API as well as implementing Event Driven Architecture using Apache Kafka*
-. In the quarkus-superheroes-... project, select one of the rest-{“hero”, “villain”, “fight”} applications in the OpenShift Topology perspective and select the Resourcestab.
+. In the quarkus-superheroes-%USERID% project, select one of the rest-{“hero”, “villain”, “fight”} applications in the OpenShift Topology perspective and select the Resourcestab.
 
 image::3-1-1-ResourceURL.png[ResourceURL,,]
 
@@ -49,7 +49,7 @@ All of the services in this demo, from the service handling a Fight, to the Vill
 == **FAULT TOLERANCE**
 In a distributed environment, fault tolerance happens around the clock for the maintainer, as they must allow it to partially run without bringing down the entire system. Otherwise, the system may result in cascading failures, where the failure of one service eventually brings down all of the services. This mechanism is built-in with Quarkus, and the developer can define how it should be handled. Examples include timeouts, fallbacks, retries, and circuit breakers.
 
-. Back in Topology, find the rest-villains icon and click on it.
+. Back in Topology, find the *rest-villains* icon and click on it.
 . The deployment sidebar will appear on the right-hand side of the topology view. Click the Details tab.
 . Click the v[down] arrow, next to the pod count chart, to scale the service down to 0 pods. This will simulate the service being unavailable.
 
@@ -102,30 +102,29 @@ image::3-3-1-InstallDetails.png[Install,,]
 
 
 == **EVENT-DRIVEN ARCHITECTURE**
-Similar to API, EDA also needs to manage, secure, and provide access information to its consumer.  Here you will see the full list of event endpoints as well as the data format of each one.
+Similar to API, EDA also needs to manage, secure, and provide access information to its consumer. Here you will see the full list of event endpoints as well as the data format of each one.
 
-. Back In the developer perspective, navigate to the  Topology view for the Project quarkus-superheroes-<youruserid>, click on the Apicurio icon, and follow the URL/Route
+. Service Registry is built on the Apicurio open source community project and is the tool we will be exploring in this section of the lab.
 
-> **Note**: A Fight schema is  automatically created after performing at least one fight. (If you’ve not yet, there won’t be any schemas in the registry)
+. http://apicurio-quarkus-superheroes-%USERID%.%SUBDOMAIN%[Navigate to the Apicurio,window=_blank] instance that is deployed for your user.
 
-image::3-4-1-Apicurio.png[Apicurio,,]
-
-[start=2]
 . Select Fight (fights-value) to see more details and display general information about the schema.
 
 image::3-4-2-API-Fight.png[APIFight,,]
 
-[start=3]
+> **Note**: A Fight schema is  automatically created after performing at least one fight. (If you’ve not yet, there won’t be any schemas in the registry)
+
+[start=2]
 . Select Content to display the content of the schema.
 
 image::3-4-3-API-Content.png[APIContent,,]
 
-[start=4]
+[start=3]
 . Select from the Version dropdown in the top right corner of the screen to display a particular version of the schema.
 
 image::3-4-4-API-Version.png[APIVersion,,]
 
-[start=5]
+[start=4]
 . You can delete/upload new versions of the schema here and back on the info edit some of its metadata.
 . Select the edit icon next to Version Metadata to edit some of the metadata of the schema (Name/labels/description/etc).
 

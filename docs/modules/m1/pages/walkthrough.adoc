@@ -19,7 +19,7 @@ Being flexible in what programming language to use allows the developer to use t
 
 .*Run the application for the first time:*
 . Navigate to the Application UI
-.. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
+.. Log in to your OpenShift Console with username *%USERID%* and password *%PASSWORD%*.
 .. Ensure you select #Developer# from the dropdown.
 
 > **Note**: For the purpose of this lab, with multiple users accessing the same environment simultaneously, admin access is limited. When you deploy this solution on your own, you will likely have access to more Administrative rights than provided in this lab.
@@ -35,6 +35,9 @@ image::1-1-1-QuarkusTopology.png[Topology,,]
 .. Locate and hover over the NodeJS icon, to reveal the #OpenURL# link - click #OpenURL# to open the application.
 
 image::1-1-1-AppUI-URL.png[AppUI,,]
+
+[start=5]
+.. Alternatively, http://ui-super-heroes-quarkus-superheroes-%USERID%.%SUBDOMAIN%[click here,window=_blank] for direct access.
 
 [start=2]
 . Run your first Fight
@@ -67,17 +70,8 @@ Improve and expedite the inner loop development process with live coding where c
 
 .*Let’s run a quick example of how live coding makes the development process faster and more pleasant.*
 
-. To begin, navigate to your code server
-.. Log in to your OpenShift Console (link to console, username and password are provided by the user distribution tool).
-... Ensure you select Developer from the dropdown.
-... Select Topology in the left hand menu and choose codeserver-...
-
-> **Note**: If already looking at the Topology of quarkus-superheroes, you can select the codeserver project from your Projects dropdown menu.
-
-[start=3]
-... Hover over the codeserver to locate the OpenURL link - Click OpenURL to open your codeserver in a new browser tab.
-
-image::1-2-1-Codeserver.png[CodeServer,,]
+[start=1]
+. To begin, https://codeserver-codeserver-%USERID%.%SUBDOMAIN%[navigate to your code server,window=_blank], the password is *%PASSWORD%*.
 
 [start=2]
 . Open a new terminal by going to [Terminal] → [New Terminal] on the menu bar present either on the top left menu or at the top of the window.
@@ -94,17 +88,12 @@ image::1-2-2-Terminal.png[Terminal,,]
  
 . Run:
 
- ]$ ./mvnw quarkus:dev 
+ ]$ ./mvnw quarkus:dev
  
 image::1-2-3-Quarkus-Dev.png[QDev,,]
 
 [start=5]
-. Once this completes, hover over http://localhost:8084 in the [INFO] output stating “Listening on…” and click “Follow Link”
-
-image::1-2-4-Quarkus-Dev.png[QDevOut,,]
-
-[start=6]
-. Append /api/villains/hello to the end of the link
+. Once this completes, https://codeserver-codeserver-%USERID%.%SUBDOMAIN%/proxy/8084/api/villains/hello[access  your hello endpoint here,window=_blank].
 
 > **Note**: Take note of the response “Hello Villain Resource”
 
@@ -142,10 +131,16 @@ image::1-3-1-CopyLogin.png[CopyLogin,,]
 image::1-3-1-CopyLoginToken.png[CopyToken,,]
 
 [start=3]
-.. Open a New Terminal in your codeserver, and paste the oc login command you just copied. 
+.. Open a New Terminal in your codeserver, and paste the oc login command you just copied.
+
+.. Alternatively, login directly with you username and password:
+
+ ]$ oc login %APIURL% -u %USERID% -p %PASSWORD%
+
+[start=4]
 .. Type the following to create your new project:
 
- ]$ oc new-project dev-<youruserid> 
+ ]$ oc new-project dev-%USERID%
 
 [start=2]
 . Navigate to /home/codeserver/quarkus-super-heroes/rest-fights:
@@ -178,13 +173,13 @@ Developers can focus on code without having to touch containers, leaving all the
 Finally, we have the ability to self-provision services. This allows greater efficiency by enabling your developers to focus on the code rather than the logistics. Developers are now able to take full control over their infrastructure and application configuration, while being shielded from the underlying complexities of the cloud providers and services. As an example, if I need another database, I can simply provision another database using a template or operator. There is even a UI guiding you through the process, and the provisioning and configuration can be exported as code that can be reused later for DevOps.
 
 . Go to the OpenShift Console and make sure you're still in the Developer perspective.
-. In the newly added development project (dev-<youruserid>), Click +Add on the left menu
+. In the newly added development project *dev-%USERID%*, Click +Add on the left menu
 .. Select Database in the Developer Catalog
 
 image::1-4-2a-AddDatabase.png[AddDB,,]
 
 [start=2]
-.. Choose PostgreSQL(Ephemeral) Template
+.. Choose PostgreSQL (Ephemeral) Template
 .. Click the Instantiate Template button at the top
 
 image::1-4-2bc-PostgreSWL(Ephemeral).png[PostgreSQL,,]

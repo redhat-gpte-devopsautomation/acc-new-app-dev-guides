@@ -3,7 +3,7 @@
 
 
 ## Congratulations on completing this lab! 
-We hope this helped establish a foundational understanding that you can take home and build upon evolving your journey in application development.*
+We hope this helped establish a foundational understanding that you can take home and build upon evolving your journey in application development.
 
 ## Red Hat Training and Certification offers additional training on Red Hat OpenShift for individuals of all experience levels. 
 These paths cover topics including deploying containers, developing containerized applications, managing container storage, and using automated DevOps pipeline.

@@ -20,7 +20,7 @@ Today, modern environments are more complex than ever. Applications are being de
 OpenShift Pipelines is Kubernetes-native, meaning all of its building blocks are targeted to manage, build, deploy, and configure resources on the platform. It even includes catalogs of reusable components for building out the pipeline. This allows the DevOps team to standardize on the automation of a CI/CD lifecycle. Furthermore, the developer team can focus on delivering code to the repository and once the automation kicks off, it takes care of the rest!
 
 
-. To begin, go to the Code Server and open the rest-fights folder. (If you don’t still have the Code Server open from before, please see Module 1, Live Coding for navigation instructions)
+. To begin, go to the Code Server and open the rest-fights folder. (If you don’t have it open, https://codeserver-codeserver-%USERID%.%SUBDOMAIN%[click here,window=_blank].)
 
  rest-fights/src/main/java/io/quarkus/sample/superheroes/fight/rest/FightResource.java
 
@@ -37,9 +37,9 @@ image::2-1-2-ChangeOutput.png[HelloUser,,]
 
 [start=3]
 . If you don’t already have one active, open a new terminal by going to [Terminal] → [New Terminal] on the top menu bar.
-. Return to the quarkus-superheroes-<youruserid> project, and make sure you’re in the  rest-fights directory
+. Return to the *quarkus-superheroes-%USERID%* project, and make sure you’re in the  rest-fights directory
 
- ]$ oc project quarkus-superheroes-<youruserid>
+ ]$ oc project quarkus-superheroes-%USERID%
  ]$ cd /home/codeserver/quarkus-super-heroes/rest-fights
 
 [start=5]
@@ -54,7 +54,7 @@ image::2-1-2-ChangeOutput.png[HelloUser,,]
 image::2-1-4-GitPush.png[GitPush,,]
 
 [start=6]
-. This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project tekton-<youruserid>. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
+. This will trigger the pipeline to start. Return back to the OpenShift console and switch to the Project *tekton-%USERID%*. Then navigate to [Pipelines] → [quarkus-pipeline] to see the pipeline starts the build process
 
 image::2-1-6a-TektonPipelines.png[Pipeline,,]
 
@@ -69,37 +69,23 @@ image::2-1-6-PipelineRunsLog.png[PipelineRuns]
 > **Note**: it can take a few minutes for the pipeline run to finish and another minute or two for ArgoCD to deploy the new app version.
 
 [start=8]
-. Verify your changes have been deployed by calling the hello endpoint:
-.. In the OpenShift Console, switch back to the Topology of the quarkus-superheroes project, and select the rest-fights service. 
-.. Under the Details tab, select Copy to Clipboard for the link in the Routes section.
-
-image::2-1-8a1-Verify-CopyLink.png[CopyLink,,]
-
-[start=3]
-.. Paste the URL in your browser, appending the following to the end of the URL. 
-
- /q/swagger-ui/#/hello/get_api_fights_hello
+. Verify your changes have been deployed by http://rest-fights-quarkus-superheroes-%USERID%.%SUBDOMAIN%/q/swagger-ui/#/hello/get_api_fights_hello[calling the hello endpoint with the Swagger UI,window=_blank]:
 
 > **Note**: if unable to access the application immediately upon pipeline completion, this may take an additional minute - try refreshing the page after another minute or two.
 
-image::2-1-8a2-Verify-AppendSwagger.png[AppendSwagger,,]
-
-[start=4]
-.. Trigger the hello response
-... Click Try it out in the top right corner
+.. Click Try it out in the top right corner.
 
 image::2-1-8a3-Verify-TryItOut.png[TryItOut,,]
 
 [start=2]
-... Click Execute
-... See your update in the Response body
+.. Click Execute and see your update in the Response body.
 
 image::2-1-8a4-Verify-Response.png[Response,,]
 
-[start=5]
-.. An alternative is to trigger this respons in your terminal with curl:
+[start=3]
+.. An alternative is to call the endpoint directly from your terminal:
 
- ]$ curl <insert_copied_link_from_8b>/api/fights/hello
+ ]$ curl http://rest-fights-quarkus-superheroes-%USERID%.%SUBDOMAIN%/api/fights/hello
 
 
 Here we ran through an example of a pipeline. You can note that once the developer checks-in the code, the pipeline kicks off and starts the building process, and you can then view the progress of the pipeline.
@@ -114,7 +100,7 @@ The benefit of running everything in the single platform is that you can now reu
 
 > **Note**: This section is shortened since admin rights are restricted in this lab instance. When you get to review this on your own, you’ll have access to more dashboards featuring much more in-depth monitoring details.
 
-. In the OpenShift console and select the Project quarkus-superheroes-<youruserid>
+. In the OpenShift console and select the Project quarkus-superheroes-%USERID%
 . Take some time to review the details available to you in the Dashboard data
 .. Select  [Observe] → [Dashboard]
 
@@ -129,28 +115,31 @@ As we start to manage more complex environments that may span across multiple cl
 
 
 . Go to GitOps console [ArgoCD], review all of the monitored resources, and map it back to the Topology in the OpenShift console:
-.. Navigate to the Project argocd-<youruserid> and flip to the Topology view. Select the OpenURL link in the top right-hand corner of the argocd-server icon.
+.. Navigate to the Project *argocd-%USERID%* and flip to the Topology view. Select the OpenURL link in the top right-hand corner of the argocd-server icon.
 
 image::2-3-1a-ArgoCDServer.png[ArgoCD,,]
 
 [start=2]
-.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier.
+
+.. https://argocd-server-argocd-%USERID%.%SUBDOMAIN%[Click here,window=_blank] for direct access to your ArgoCD instance.
+
+.. When the ArgoCD login screen comes up, click [Log In Via OpenShift] button at the top, and use the same UserID and password that you logged into OpenShift earlier (%USERID% / %PASSWORD%).
 
 > **Note**: You may need to authorize read-only access to your user information. Click Allow Permissions if so.
 
 image::2-3-1b-LoginViaOpenShift.png[ArgoCDLogin,,]
 
 [start=3]
-.. Click into the quarkus-superheroes application and you will see all of the resources also mapped out in the OpenShift console.
+.. Click into the *quarkus-superheroes* application and you will see all of the resources also mapped out in the OpenShift console.
 
 image::2-3-1c-Resources.png[ArgoCDResources,,]
 
 [start=2]
 . Go to Gitea and review the deployment configs:
-.. In your User Assignment tool, click the link at the bottom to take you to Gitea
+.. Gitea is available https://gitea.%SUBDOMAIN%[in this link,window=_blank].
 .. Once on the Gitea homepage, click Sign In on the top right.
-.. Credentials are the same as you’ve been using.
-.. Click the link to the repository  <youruserid>/quarkus-super-heroes-deploy
+.. Credentials are the same as you’ve been using (%USERID% / %PASSWORD%).
+.. Click the link to the repository  *%USERID%/quarkus-super-heroes-deploy*.
 
 image::2-3-2d-GiteaRepo.png[GiteaRepo,,]
 
@@ -165,7 +154,7 @@ image::2-3-2e-GiteaKustomize.png[Kustomize,,]
 image::2-3-2f-GiteaDeployment.png[GiteaDeployment,,]
 
 [start=3]
-. Back In the OpenShift Console, under Developer perspective, go to the Topology, within the Project quarkus-superheroes-<youruserid>.
+. Back In the OpenShift Console, under Developer perspective, go to the Topology, within the Project *quarkus-superheroes-%USERID%*.
 . Locate the rest-fights service.
 . Click the icon and the right panel will appear - select the Details tab.
 . Increase the number of running Pod to 3 by clicking ^ next to the pod count chart
