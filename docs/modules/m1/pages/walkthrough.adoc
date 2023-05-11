@@ -27,7 +27,7 @@ Being flexible in what programming language to use allows the developer to use t
 image::1-1-3-DeveloperPerspective.png[Dev,,]
 
 [start=3]
-.. Select #Topology# in the left hand menu and choose quarkus-superheroes-...
+.. Select #Topology# in the left hand menu and choose quarkus-superheroes-%USERID%
 
 image::1-1-1-QuarkusTopology.png[Topology,,]
 
