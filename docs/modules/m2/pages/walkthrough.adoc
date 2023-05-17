@@ -98,7 +98,7 @@ The benefit of running everything in the single platform is that you can now reu
 
 == **MONITORING**
 
-> **Note**: This section is shortened since admin rights are restricted in this lab instance. When you get to review this on your own, you’ll have access to more dashboards featuring much more in-depth monitoring details.
+> **Note**: This section is shortened since admin rights are restricted in this lab instance. When administrating your own environment, you’ll have access to more dashboards featuring much more in-depth monitoring details.
 
 . In the OpenShift console and select the Project quarkus-superheroes-%USERID%
 . Take some time to review the details available to you in the Dashboard data
